@@ -1,0 +1,4 @@
+﻿  TensorFlowXOR.cpp
+C:\Users\redst\Documents\GitHub\Projects\libraries\libtensorflow-cpu-windows-x86_64-2.9.1\include\tensorflow\c\c_api.h(989,68): warning C4190: 'TF_NewWhile' has C-linkage specified, but returns UDT 'TF_WhileParams' which is incompatible with C
+C:\Users\redst\Documents\GitHub\Projects\libraries\libtensorflow-cpu-windows-x86_64-2.9.1\include\tensorflow\c\c_api.h(945): message : see declaration of 'TF_WhileParams'
+  TensorFlowXOR.vcxproj -> C:\Users\redst\Documents\GitHub\Projects\cpp\TensorFlowXOR\TensorFlowXOR\x64\Debug\TensorFlowXOR.exe

@@ -1,0 +1,4 @@
+﻿  ReadPHPVariable.cpp
+C:\Users\redst\Documents\GitHub\Projects\cpp\ReadPHPVariable\ReadPHPVariable\ReadPHPVariable\ReadPHPVariable.cpp(63,79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\redst\Documents\GitHub\Projects\cpp\ReadPHPVariable\ReadPHPVariable\ReadPHPVariable\ReadPHPVariable.cpp(74,9): warning C4101: 'dataLen': unreferenced local variable
+  ReadPHPVariable.vcxproj -> C:\Users\redst\Documents\GitHub\Projects\cpp\ReadPHPVariable\ReadPHPVariable\x64\Debug\ReadPHPVariable.exe

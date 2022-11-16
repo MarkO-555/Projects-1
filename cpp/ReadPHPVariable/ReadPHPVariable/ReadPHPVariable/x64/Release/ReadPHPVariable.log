@@ -1,0 +1,2 @@
+﻿  ReadPHPVariable.cpp
+LINK : fatal error LNK1181: cannot open input file 'C:\Users\redst\Documents\GitHub\Projects\libraries\Curl-7.85.0\Release x64 vc16\lib.obj'
