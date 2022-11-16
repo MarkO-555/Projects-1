@@ -1,0 +1,3 @@
+<a href="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEBmM0AsYCckBsvIAmADgVy3UJHSxCXWToFMBaMMAKDFyUMmJB8ByXAKEhc1aFiz5iYOPKxhMuDgDdwk9LnRbwJKEfSQ6R0zAQcA7oIDsVMIcIPwdyZC64qyEfaqq-oIgACZMAGYAhgCuADYALiyxTCHg5lCwnABO1NxBgSYW4PAcOU4C2I7OJkZgrFilBsKQeuUofqZ1LA0Axk3tkm06ehaw8BCE0MQkpOgIvgiETqKMMHCctrL9LlUCnrZ5w-1H+8e6KC3U56dthDXidxY2-b6S4q9Qz++X7x0cfchLoV8nBaqwBCxkNBfDDYXDVmMNkERGJXMDToC9MDMShRJ9bDjsUDrs9CaCCqCMX5HgM3B5SX4wO4gkz6UzWoZKhJWgQ0gp4Bkmb4QAAlJgAZwAluL4pEAHY9JjPLZtFW804qzmDQyedkvS7nQhkPnwUY6Fqmy3wRhiqUy+WK5VvY1bGkat41W41TwAexQ-VMJhkgmgSDWeCNRh8KA4QA">falstad Demo Link</a></br></br>
+<img src="image.png" title="Schematic">
+<img src="555Internal.PNG" title="Internal">

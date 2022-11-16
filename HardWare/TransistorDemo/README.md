@@ -1,0 +1,2 @@
+<a href="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEBmA7NMZUCYAskAOMBZANjVRAUiqpoQFMBaTAKABdxdcQCaBOUrxo0IMVOQSl+qKaVJhS3HuP65kkfkX7YlkCQXBwQAEwYAzAIYBXADbtWAdxBMlUEIPeQnHoYoFCnt4ASiC4fL5hEf7u2GH0XlDQCKwA5pExeKKkIlCsAG4ubjGuKu4QOeDYuSLJrGBERTwxnjGiuGC40ATYugQ4uNj8w8hGotVJKtC4rKHhNG7ziTT4tDV1AMog2DjC8TQRuVa2AM4MsT5BkW7eJtu70Tp7cWZWdg4n+yCLETfux2cfPgAlEQd4sM0ntFuFVDBAwPAkogQMEGCcAJYndiWAB2AGMGD5Ojxoc0wHFvAB7b7fMr4YbgSpgaBCGhxITIVhAA">falstad Demo Link</a></br></br>
+<img src="image.png" title="Schematic">
