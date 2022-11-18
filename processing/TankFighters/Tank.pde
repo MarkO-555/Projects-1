@@ -10,7 +10,6 @@ class Tank {
   private float Health = 10;
   private float maxHealth = 10;
 
-  private float scale = 1;
   private float Width = 40;
   private float Height = 30;
   private float maxVel = 5;
@@ -41,10 +40,17 @@ class Tank {
     if (BLUE >= 1)
       this.GREEN = 1;
 
-    Width *= scale;
-    Height *= scale;
-
-    r = Width+10;
+    r = 75;
+    
+    Width = 0.8*r;
+    Height = 0.6*r;
+    
+    //Width = 4/5*this.r;
+    //Height = 3/5*this.r;
+    
+    //println(r);
+    //println(Width, Height);
+    //println(0.8*r, 0.6*r);
 
     left = false;
     right = false;
@@ -55,12 +61,12 @@ class Tank {
   }
 
   void update() {
-    if(!colliding){
+    //if(!colliding){
       if (player)
         controls();
       else
         AI();
-    }
+    //}
 
     Draw();
 
@@ -109,8 +115,6 @@ class Tank {
       acc.set(num, acc.y);
     if (mouseDown && lastMouseButton==LEFT)
       fire();
-
-
     return;
   }
 
@@ -123,18 +127,11 @@ class Tank {
   }
 
   void isColliding(Tank tank) {
-
-    //println(tank.pos.x+tank.r, tank.pos.x+tank.r, " || ", pos.x+r, pos.x-r);
-    //println(tank.pos.y+tank.r, tank.pos.y-tank.r, " || ", pos.y+r, pos.y-r);
-
-    //println((tank.pos.copy().sub(pos).mag()) <= (r/2 + tank.r/2));
-    
     PVector Dist = this.pos.copy().sub(tank.pos);
     
     if ((Dist.mag()) <= (this.r/2 + tank.r/2 - (0.1 * (this.r + tank.r)))) {
       this.colliding = true;
       tank.colliding = true;
-      
       
       tank.vel.sub(Dist); 
       this.vel.sub(Dist.mult(-1));
@@ -170,7 +167,8 @@ class Tank {
     stroke(0);
     strokeWeight(1);
     fill(RED*100, GREEN*100, BLUE*100);
-    rect(-Width/2, -Height/2, Width, Height);
+    rect(-Width/2, -Height/2, Width, Height); //-20, -25, 40, 50
+    
     pop();
 
     push();
