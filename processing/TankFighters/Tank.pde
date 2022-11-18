@@ -129,38 +129,20 @@ class Tank {
 
     //println((tank.pos.copy().sub(pos).mag()) <= (r/2 + tank.r/2));
     
-        
-    if ((this.pos.copy().sub(tank.pos).mag()) <= (r/2 + tank.r/2 + 2)) {
-      //println("Colliding");
+    PVector Dist = this.pos.copy().sub(tank.pos);
+    
+    if ((Dist.mag()) <= (this.r/2 + tank.r/2 - (0.1 * (this.r + tank.r)))) {
       this.colliding = true;
       tank.colliding = true;
       
       
-      tank.vel.set(tank.pos.copy().sub(this.pos).mult(0.1));
-      tank.pos.add(tank.vel);
-
-      this.vel.set(tank.pos.copy().sub(this.pos).mult(0.0));
-      this.pos.add(this.vel);
-      
-      
-      //if (tank.vel.mag() >= 0.1) {
-      //  //tank.pos.add(tank.pos.copy().sub((this.pos.x+r)*it, (this.pos.y+this.r)*it).setMag(1)).sub(tank.vel);
-      //  //tank.vel.div(100);
-      //}
-      //else if (this.vel.mag() >= 0.1) {
-
-      //  tank.vel.set(tank.pos.copy().sub(this.pos).mult(0.1));
-      //  tank.pos.add(tank.vel);
-
-      //  this.vel.set(tank.pos.copy().sub(this.pos).mult(0.0));
-      //  this.pos.add(this.vel);
-      //}
+      tank.vel.sub(Dist); 
+      this.vel.sub(Dist.mult(-1));
     }
     else if(this.colliding || tank.colliding){
       this.colliding = false;
       tank.colliding = false;
     }
-      
   }
 
   void hit() {
