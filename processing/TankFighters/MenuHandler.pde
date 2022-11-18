@@ -181,21 +181,21 @@ class MainMenu{
            BLUE = Float.parseFloat(LevelCreator.getTextBoxValue(2));
          else
            BLUE = 0;
-         
-         //debug?!?!?
-         
-         
-         //println(((width/scale + xoff) - xoff) / (it/scale), ((height/scale + yoff) - yoff) / (it/scale));
-         
-         int XCount = (int)((( width/scale + xoff) - xoff) / (it/scale));
-         int YCount = (int)(((height/scale + yoff) - yoff) / (it/scale));
-         
-         
-         //x = Math.floor(sta/YCount);
-         //y = sta - YCount*Math.floor(sta/YCount);
-         
-         //blocks.add(new Block((int)Math.floor(sta/10), (int)(sta - Math.floor(sta/10)*10), 1, 1, RED, GREEN, BLUE, LevelCreator.getChooserState(1)));
-         
+           
+           /**
+           
+                 0  1  2  3  4  5
+              0 00 06 12 18 24 30
+              1 01 07 13 19 25 31
+              2 02 08 14 20 26 32
+              3 03 09 15 21 27 33
+              4 04 10 16 22 28 34
+              5 05 11 17 23 29 35
+              
+              x = floor(sta/height)
+              y = sta - height*floor(sta/height)
+              
+           **/
          blocks.add(new Block((int)(Math.floor(sta/YCount)), (int)(sta - YCount*Math.floor(sta/YCount)), 1, 1, RED, GREEN, BLUE, LevelCreator.getChooserState(1)));
        }
        else if(Hovering && mouseDown && lastMouseButton == RIGHT){

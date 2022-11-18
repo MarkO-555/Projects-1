@@ -8,9 +8,11 @@ int count = 0;
 int pauseCount = 0;
 
 float it = 20;
+int XCount, YCount;
 MainMenu mainMenu;
 
 void setup() {
+         
   size(800, 800);
   //fullScreen();
   Levels = new ArrayList<String>();
@@ -36,6 +38,9 @@ void setup() {
   particlesystem = new ArrayList<ParticleSystem>();
   mainMenu = new MainMenu();
   blocks = new ArrayList<Block>();
+  
+  XCount = (int)(width/it);
+  YCount = (int)(height/it);
 
   //tanks.add(new Tank(true, 0, 1, 0));
   //tanks.add(new Tank(false, 1, 0, 0));
