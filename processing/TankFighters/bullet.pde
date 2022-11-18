@@ -11,7 +11,12 @@ class bullet {
     this.weapon = weapon;
 
     pos = tank.pos.copy();
-    vel = tank.barrel.copy();
+    vel = tank.barrel.copy().setMag(250);
+    
+    //println(it, 250);
+    
+    
+    this.r = it/16;
 
     vel.setMag(-maxVel);
   }
@@ -53,6 +58,7 @@ class bullet {
   void Draw() {
     fill(255);
     strokeWeight(1);
+    
     ellipse(pos.x, pos.y, r, r); 
     return;
   }

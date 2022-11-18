@@ -104,13 +104,18 @@ class Tank {
 
   void controls() {
     float num = 5;
+    
+    
+    // (x) = num/it
+    
+    num = it/16;
 
     if (boost) {
-      this.maxAcc = 5;
-      this.maxVel = 20;
+      this.maxAcc = it/16;
+      this.maxVel = it/4;
     } else {
-      this.maxAcc = 1;
-      this.maxVel = 5;
+      this.maxAcc = it/80;
+      this.maxVel = it/16;
     }
 
     if (up)

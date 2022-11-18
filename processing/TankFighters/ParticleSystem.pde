@@ -24,7 +24,9 @@ class ParticleSystem {
       float x = (cos(deg) * distance);
       float y = (sin(deg) * distance);
 
-      vec.set(x, y).setMag(random(5));
+      vec.set(x, y).setMag(random(it/16));
+      
+      //println(it/8, 5);
 
       particles.add(new Particle(pos.copy(), vec.copy(), RED, GREEN, BLUE));
     }
@@ -71,7 +73,7 @@ class Particle {
 
   float lifeSpan = 300;
   float lifeSpanMax = lifeSpan;
-  float it = 4;
+  float lt = 4;
   float r = 4;
 
   float RED, GREEN, BLUE;
@@ -80,6 +82,10 @@ class Particle {
     this.pos = pos;
     this.vel = vel;
     this.acc = new PVector(0, 0);
+    
+    
+    //println(it/20, r);
+    this.r = it/20;
 
     this.RED = RED;
     this.GREEN = GREEN;
@@ -90,7 +96,7 @@ class Particle {
     vel.add(acc);
     pos.add(vel);
     acc.set(0, 0);
-    lifeSpan -= it;
+    lifeSpan -= lt;
 
     vel.mult(0.9);
 
@@ -100,7 +106,10 @@ class Particle {
 
   void Draw() {
     noStroke();
-    fill(120*RED, 120*GREEN, 120*BLUE, map(lifeSpan, 0, lifeSpanMax, 0, 255));
+    fill(120*RED, 120*GREEN, 120*BLUE, map(lifeSpan, 0, lifeSpanMax, 0, it*12.75));
+    
+    println(255, it);
+    
     ellipse(pos.x, pos.y, 4, 4); 
     return;
   }
