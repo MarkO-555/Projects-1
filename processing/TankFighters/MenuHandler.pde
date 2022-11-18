@@ -240,13 +240,14 @@ class MainMenu{
            boolean pass = true;
            
            for(int i=0; i<Levels.size(); i++){
-             if(Levels.get(i) == str){
+             println(Levels.get(i), str);
+             if(Levels.get(i).equals(str)){
                pass = false;
                break;
              }
            }
            
-           if(pass){
+           //if(pass){
              PImage col  = createImage(int(width/it), int(height/it), RGB);
              PImage type  = createImage(int(width/it), int(height/it), RGB);
              
@@ -260,15 +261,16 @@ class MainMenu{
              if(str == "")
                str = "default";
                
-             col.save("Levels/"+str+"-color.png");
+              col.save("Levels/"+str+"-color.png");
              type.save("Levels/"+str+"-type.png");
              
-             Writer.println(str);
-             Writer.flush();
+             if(pass){
+               Writer.println(str);
+               Levels.add(str);
+               LoadMenu.getChooser(0).addButton(str);
+             }
              
-             Levels.add(str);
-             LoadMenu.getChooser(0).addButton(str);             
-           }
+             Writer.flush();
        }
        if(SaveMenu.getState() != -1){
          state = 1;
