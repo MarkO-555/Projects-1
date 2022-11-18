@@ -40,7 +40,15 @@ class Tank {
     if (BLUE >= 1)
       this.GREEN = 1;
 
-    r = 75;
+    //r = 75;
+    
+    r = it*0.9375;
+    
+    //x = 75/80
+    
+    //println(0.9375);
+    
+    //println((XCount+YCount)/2);
     
     Width = 0.8*r;
     Height = 0.6*r;

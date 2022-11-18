@@ -1,3 +1,4 @@
 Stage
 test
 X
+player
