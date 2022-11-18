@@ -37,11 +37,10 @@ class MainMenu{
     ArrayList<UIButton> LVbtns = new ArrayList<UIButton>();
     
     LevelCreator.addText("Level Creator", 165, 160, 70);
-        
+    
     for(int x=xoff; x<width/scale+xoff; x+=it/scale){
       for(int y=yoff; y<height/scale+yoff; y+=it/scale){
         LVbtns.add(new UIButton("", x, y, it/scale, it/scale));
-        //LevelCreator.addButton("", x, y, it/scale, it/scale);
       }
     }
     
@@ -149,7 +148,7 @@ class MainMenu{
        LevelCreator.update();
        ButtonChooser editor = LevelCreator.getChooser(0);
        
-       for(int i=0; i<blocks.size(); i++){
+       for(int i=0; i<blocks.size(); i++){//populate with colored blocks
          Block block = blocks.get(i);
          fill(block.RED, block.GREEN, block.BLUE);
          rect(block.x/2*it+xoff, block.y/2*it+yoff, it/2, it/2);
@@ -182,8 +181,22 @@ class MainMenu{
            BLUE = Float.parseFloat(LevelCreator.getTextBoxValue(2));
          else
            BLUE = 0;
-           
-         blocks.add(new Block((int)Math.floor(sta/10), (int)(sta - Math.floor(sta/10)*10), 1, 1, RED, GREEN, BLUE, LevelCreator.getChooserState(1)));
+         
+         //debug?!?!?
+         
+         
+         //println(((width/scale + xoff) - xoff) / (it/scale), ((height/scale + yoff) - yoff) / (it/scale));
+         
+         int XCount = (int)((( width/scale + xoff) - xoff) / (it/scale));
+         int YCount = (int)(((height/scale + yoff) - yoff) / (it/scale));
+         
+         
+         //x = Math.floor(sta/YCount);
+         //y = sta - YCount*Math.floor(sta/YCount);
+         
+         //blocks.add(new Block((int)Math.floor(sta/10), (int)(sta - Math.floor(sta/10)*10), 1, 1, RED, GREEN, BLUE, LevelCreator.getChooserState(1)));
+         
+         blocks.add(new Block((int)(Math.floor(sta/YCount)), (int)(sta - YCount*Math.floor(sta/YCount)), 1, 1, RED, GREEN, BLUE, LevelCreator.getChooserState(1)));
        }
        else if(Hovering && mouseDown && lastMouseButton == RIGHT){
          for(int i=0; i<blocks.size(); i++){

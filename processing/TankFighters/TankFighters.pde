@@ -7,7 +7,7 @@ ArrayList<String> Levels;
 int count = 0;
 int pauseCount = 0;
 
-float it = 80;
+float it = 20;
 MainMenu mainMenu;
 
 void setup() {
