@@ -27,7 +27,7 @@ class Block{
   }
   
   void update(){
-    if(type == blockTypes.Block)
+    if(type == blockTypes.Block || type == blockTypes.MovableBlock)
       Draw();
   }
   

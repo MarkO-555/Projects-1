@@ -1,7 +1,8 @@
 enum blockTypes{
   Player,
   Enemy,
-  Block
+  Block, 
+  MovableBlock
 }
 
 enum WeaponLists{

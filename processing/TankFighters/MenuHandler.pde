@@ -72,15 +72,22 @@ class MainMenu{
     
     ArrayList<UIButton> btns = new ArrayList<UIButton>();
     
-    float Lcx = 30;
-    float Lcy = 470;
-    float Loff = 5;
+    //float Lcx = 30;
+    //float Lcy = 470;
+    //float Loff = 5;
     
-    btns.add(new UIButton(loadImage("Icons/Player.png"), Lcx+00+Loff, Lcy+Loff));
-    btns.add(new UIButton(loadImage("Icons/Enemy.png"),  Lcx+30+Loff, Lcy+Loff));
-    btns.add(new UIButton(loadImage("Icons/Block.png"),  Lcx+60+Loff, Lcy+Loff));
+    //btns.add(new UIButton(loadImage("Icons/Player.png"), Lcx+00+Loff, Lcy+Loff));
+    //btns.add(new UIButton(loadImage("Icons/Enemy.png"),  Lcx+30+Loff, Lcy+Loff));
+    //btns.add(new UIButton(loadImage("Icons/Block.png"),  Lcx+60+Loff, Lcy+Loff));
+    //btns.add(new UIButton(loadImage("Icons/MovableBlock.png"), Lcx+90+Loff, Lcy+Loff));
     
-    LevelCreator.addChooserB(Lcx, Lcy, 100, 100, Constants.TabBackground, btns);
+    btns.add(new UIButton(loadImage("Icons/Player.png")));
+    btns.add(new UIButton(loadImage("Icons/Enemy.png")));
+    btns.add(new UIButton(loadImage("Icons/Block.png")));
+    btns.add(new UIButton(loadImage("Icons/MovableBlock.png")));
+    
+    
+    LevelCreator.addButtonChooser(30, 470, 100, 100, Constants.TabBackground, btns);
     
     LevelCreator.getChooser(0).setState(blockTypes.Block.ordinal());
     LevelCreator.getChooser(0).setClickMode(true);
@@ -430,10 +437,40 @@ class Menu{
     Choosers.add(Chooser);
   }
   
-  void addChooserB(float x, float y, float w, float h, float background, ArrayList<UIButton> buttons){
+  void addButtonChooser(float x, float y, float w, float h, float background, ArrayList<UIButton> buttons){
     ButtonChooser Chooser = new ButtonChooser(x, y, w, h, background);
-    for(int i=0; i<buttons.size(); i++)
+    if(buttons.size() <= 0){
+      println("No Buttons were passed to buttonChooser");
+      return;
+    }
+      
+    int wc = (int)Math.floor(w/buttons.get(0).w);
+    int hc = (int)Math.floor(h/buttons.get(0).h);
+    
+    if(buttons.size() > (wc*hc)){
+      println("To many buttons sent to buttonChooser");
+      return; 
+    }
+        
+    for(int i=0; i<buttons.size(); i++){
+      if(buttons.get(i).x == -1)
+        buttons.get(i).x = buttons.get(i).w*((int)(i-Math.floor(i/wc)*wc))+x;
+      if(buttons.get(i).y == -1)
+        buttons.get(i).y = buttons.get(i).h*((int)Math.floor(i/wc))+y;
+      
+      //i/wc
+      
+      
+      /**
+        0 1 2
+      0 0 1 2
+      1 3 4 5
+      2 6 7 8
+      
+      **/
+      
       Chooser.addButton(buttons.get(i), 0);
+    }
       
     Choosers.add(Chooser);
   }
@@ -594,6 +631,10 @@ class UIButton implements UIObject{
     this.w = img.width;
     this.h = img.height;
     this.text = null;
+   }
+   
+   UIButton(PImage img){
+     this(img, -1, -1); 
    }
    
    void update(){
