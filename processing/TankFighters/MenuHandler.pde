@@ -64,7 +64,7 @@ class MainMenu{
     btns.add(new UIButton(loadImage("Icons/MovableBlock.png")));
     
     
-    LevelCreator.addButtonChooser(30, 470, 100, 100, Constants.TabBackground, btns);
+    LevelCreator.addButtonChooser(25, 470, 325, 100, Constants.TabBackground, btns);
     
     LevelCreator.getChooser(0).setState(blockTypes.Block.ordinal());
     LevelCreator.getChooser(0).setClickMode(true);
