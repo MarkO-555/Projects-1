@@ -1,0 +1,17 @@
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\bin\Debug\net6.0-windows\PS2_ModLoader.exe
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\bin\Debug\net6.0-windows\PS2_ModLoader.deps.json
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\bin\Debug\net6.0-windows\PS2_ModLoader.runtimeconfig.json
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\bin\Debug\net6.0-windows\PS2_ModLoader.dll
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\bin\Debug\net6.0-windows\PS2_ModLoader.pdb
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.csproj.AssemblyReference.cache
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.Form1.resources
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.csproj.GenerateResource.cache
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.AssemblyInfoInputs.cache
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.AssemblyInfo.cs
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.csproj.CoreCompileInputs.cache
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.dll
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\refint\PS2_ModLoader.dll
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.pdb
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\PS2_ModLoader.genruntimeconfig.cache
+C:\Users\redst\Documents\GitHub\Projects\c#\PS2_ModLoader\PS2_ModLoader\obj\Debug\net6.0-windows\ref\PS2_ModLoader.dll
