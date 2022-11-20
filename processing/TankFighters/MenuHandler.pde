@@ -50,36 +50,13 @@ class MainMenu{
     LevelCreator.addButton("Save Stage", 40, 660, 250, 45);
     LevelCreator.addButton("Load Stage", 40, 660+55, 250, 45);
     
-    int tSize = 20;
-    int x = 125;
-    int xdif = 80;
+    LevelCreator.addColorEditor(25, yoff, 325, 240);
+    //int tSize = 20;
+    //int x = 125;
+    //int xdif = 80;
     
-    
-    LevelCreator.addRect(25, yoff, 325, 240, Constants.TabBackground);
-    
-    LevelCreator.addText("Color", x+50,   yoff+30,  tSize);
-    LevelCreator.addText("Red",   x-xdif, yoff+80,  tSize);
-    LevelCreator.addText("Green", x-xdif, yoff+140, tSize);
-    LevelCreator.addText("Blue",  x-xdif, yoff+200, tSize);
-    
-    LevelCreator.addTextbox("150", x, yoff+50,  200, 50);
-    LevelCreator.addTextbox("150", x, yoff+110, 200, 50);
-    LevelCreator.addTextbox("150", x, yoff+170, 200, 50);
-    
-    LevelCreator.setTextboxType(0, true);
-    LevelCreator.setTextboxType(1, true);
-    LevelCreator.setTextboxType(2, true);
     
     ArrayList<UIButton> btns = new ArrayList<UIButton>();
-    
-    //float Lcx = 30;
-    //float Lcy = 470;
-    //float Loff = 5;
-    
-    //btns.add(new UIButton(loadImage("Icons/Player.png"), Lcx+00+Loff, Lcy+Loff));
-    //btns.add(new UIButton(loadImage("Icons/Enemy.png"),  Lcx+30+Loff, Lcy+Loff));
-    //btns.add(new UIButton(loadImage("Icons/Block.png"),  Lcx+60+Loff, Lcy+Loff));
-    //btns.add(new UIButton(loadImage("Icons/MovableBlock.png"), Lcx+90+Loff, Lcy+Loff));
     
     btns.add(new UIButton(loadImage("Icons/Player.png")));
     btns.add(new UIButton(loadImage("Icons/Enemy.png")));
@@ -152,7 +129,7 @@ class MainMenu{
        state = 6;
      }
      else if(state == 1) {//Level Editor/Creator
-       LevelCreator.update();
+       LevelCreator.update();  
        ButtonChooser editor = LevelCreator.getChooser(0);
        
        for(int i=0; i<blocks.size(); i++){//populate with colored blocks
@@ -176,19 +153,37 @@ class MainMenu{
        if(Hovering && !buttonDown && pass && mouseDown && lastMouseButton == LEFT){ //mouseButton == LEFT
          float RED, GREEN, BLUE;
          
-         if(LevelCreator.getTextBoxValue(0) != "")
-           RED = Float.parseFloat(LevelCreator.getTextBoxValue(0));
+         //if(LevelCreator.getTextBoxValue(0) != "")
+         //  RED = Float.parseFloat(LevelCreator.getTextBoxValue(0));
+         //else
+         //  RED = 0;
+         //if(LevelCreator.getTextBoxValue(1) != "")
+         //  GREEN = Float.parseFloat(LevelCreator.getTextBoxValue(1));
+         //else
+         //  GREEN = 0;
+         //if(LevelCreator.getTextBoxValue(2) != "")
+         //  BLUE = Float.parseFloat(LevelCreator.getTextBoxValue(2));
+         //else
+         //  BLUE = 0;
+           
+           
+          
+         //RED = Float.parseFloat(LevelCreator.getColorEditorRed(0));
+         //RED = Float.parseFloat(LevelCreator.getColorEditorRed(0));
+         //RED = Float.parseFloat(LevelCreator.getColorEditorRed(0));
+         
+         if(LevelCreator.getColorEditorRed(0) != "")
+           RED = Float.parseFloat(LevelCreator.getColorEditorRed(0));
          else
            RED = 0;
-         if(LevelCreator.getTextBoxValue(1) != "")
-           GREEN = Float.parseFloat(LevelCreator.getTextBoxValue(1));
+         if(LevelCreator.getColorEditorGreen(0) != "")
+           GREEN = Float.parseFloat(LevelCreator.getColorEditorGreen(0));
          else
            GREEN = 0;
-         if(LevelCreator.getTextBoxValue(2) != "")
-           BLUE = Float.parseFloat(LevelCreator.getTextBoxValue(2));
+         if(LevelCreator.getColorEditorBlue(0) != "")
+           BLUE = Float.parseFloat(LevelCreator.getColorEditorBlue(0));
          else
            BLUE = 0;
-           
            /**
            
                  0  1  2  3  4  5
@@ -412,6 +407,7 @@ class Menu{
   private ArrayList<UITextbox> textboxs = new ArrayList<UITextbox>();
   
   private ArrayList<ButtonChooser> Choosers = new ArrayList<ButtonChooser>();
+  private ArrayList<UIColorEditor> colorEditors = new ArrayList<UIColorEditor>();
   
   private color col = color(165);
   
@@ -421,6 +417,10 @@ class Menu{
         return;
       textboxs.get(i).setValue(vals.get(i));
     }
+  }
+  
+  void addColorEditor(float x, float y, float w, float h){
+        colorEditors.add(new UIColorEditor(x, y, w, h));
   }
   
   void addChooser(float x, float y, float w, float h, float background, ArrayList<UIButton> buttons, ArrayList<Integer> pages){
@@ -499,7 +499,7 @@ class Menu{
     buttons.add(btn); 
   }
   
-  void addRect(float x, float y, float w, float h, float Color){
+  void addRect(float x, float y, float w, float h, float Color){//
     rectPos.add(new PVector(x, y));
     rectSize.add(new PVector(w, h));
     rectColor.add(Color);
@@ -525,6 +525,16 @@ class Menu{
     this.imagePos.add(imagePos);
   }
   
+  String getColorEditorRed(int index){
+    return colorEditors.get(index).getRed();
+  }
+  String getColorEditorGreen(int index){
+    return colorEditors.get(index).getGreen();
+  }
+  String getColorEditorBlue(int index){
+    return colorEditors.get(index).getBlue();
+  }
+  
   String getTextBoxValue(int index){
     return textboxs.get(index).text;
   }
@@ -541,7 +551,7 @@ class Menu{
     return Choosers.get(index);
   }
   
-  void setTextboxType(int index, boolean type){
+  void setTextboxNumOnly(int index, boolean type){
     textboxs.get(index).numOnly = type;
   }
   
@@ -574,7 +584,12 @@ class Menu{
       }
       else
         buttons.get(i).background  = Constants.ButtonReleased; //220;
+        
+      buttons.get(i).update();
     }
+    
+    for(int i=0; i<colorEditors.size(); i++)
+      colorEditors.get(i).update();
     
     for(int i=0; i<textboxs.size(); i++)
       textboxs.get(i).update();
@@ -741,6 +756,95 @@ class UITextbox implements UIObject{
   
   boolean Hover(){
      return(mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+  }
+}
+
+class UIColorEditor implements UIObject {
+  private float x, y, w, h;
+  
+  private UITextbox RedTextBox, GreenTextBox, BlueTextBox;
+  private PVector   RedTextPos, GreenTextPos, BlueTextPos, ColorTextPos;
+  private String    RedText,    GreenText,    BlueText,    ColorText;
+  
+  
+  
+  private PVector rectPos, rectSize;
+  private Float rectColor;
+  
+  
+  
+    //LevelCreator.addRect(25, yoff, 325, 240, Constants.TabBackground);
+    
+    //x = 125
+    //int xdif = 80;
+    
+    //LevelCreator.addText("Color", x+50,   yoff+30,  tSize); 175
+    //LevelCreator.addText("Red",   x-xdif, yoff+80,  tSize); 45
+    //LevelCreator.addText("Green", x-xdif, yoff+140, tSize); 45
+    //LevelCreator.addText("Blue",  x-xdif, yoff+200, tSize); 45
+    
+    //LevelCreator.addTextbox("150", x, yoff+50,  200, 50); 125
+    //LevelCreator.addTextbox("150", x, yoff+110, 200, 50); 125
+    //LevelCreator.addTextbox("150", x, yoff+170, 200, 50); 125
+    
+    //LevelCreator.setTextboxNumOnly(0, true);
+    //LevelCreator.setTextboxNumOnly(1, true);
+    //LevelCreator.setTextboxNumOnly(2, true);
+  
+  
+  UIColorEditor(float x, float y, float w, float h){//25, 220, 325, 240
+    rectPos  = new PVector(x, y);
+    rectSize = new PVector(w, h);
+    rectColor = Constants.TabBackground;
+    
+    ColorText = "Color";
+    RedText   = "Red";
+    GreenText = "Green";
+    BlueText  = "Blue";
+    
+    ColorTextPos = new PVector(x+150, y+30);
+    RedTextPos   = new PVector(x+20,  y+80);
+    GreenTextPos = new PVector(x+20,  y+140);
+    BlueTextPos  = new PVector(x+20,  y+200);
+    
+    RedTextBox   = new UITextbox("150", x+100, y+50,  200, 50);
+    GreenTextBox = new UITextbox("150", x+100, y+110, 200, 50);
+    BlueTextBox  = new UITextbox("150", x+100, y+170, 200, 50);
+    
+    RedTextBox.numOnly   = true;
+    GreenTextBox.numOnly = true;
+    BlueTextBox.numOnly  = true;
+  }
+  
+  String getRed(){
+    return RedTextBox.text;
+  }
+  String getGreen(){
+    return GreenTextBox.text;
+  }
+  String getBlue(){
+    return BlueTextBox.text;
+  }
+  
+  void update(){
+    Draw(); 
+    
+    RedTextBox.update();
+    GreenTextBox.update();
+    BlueTextBox.update();
+    
+  }
+  void Draw(){
+    fill(rectColor);
+    rect(rectPos.x, rectPos.y, rectSize.x, rectSize.y);
+    
+    fill(0);
+    textSize(20);
+    text(ColorText, ColorTextPos.x, ColorTextPos.y);
+    text(RedText,   RedTextPos.x,   RedTextPos.y);
+    text(GreenText, GreenTextPos.x, GreenTextPos.y);
+    text(BlueText,  BlueTextPos.x,  BlueTextPos.y);
+    
   }
 }
 
